@@ -105,6 +105,12 @@
       valid = false;
     }
 
+    var youtube = form.querySelector('#youtube_link');
+    if(youtube && youtube.value && !/^https?:\/\/(www\.)?(youtube\.com|youtu\.be)\//i.test(youtube.value.trim())){
+      setError(youtube, 'Enter a valid YouTube link.');
+      valid = false;
+    }
+
     if(!valid){
       var firstError = form.querySelector('.field.error input, .field.error select, .field.error textarea');
       if(firstError) firstError.focus();
