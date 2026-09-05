@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register a team — Fall Science Regional Innovation Challenge</title>
+<meta name="description" content="Register a student research team for the Fall Science Regional Innovation Challenge.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-mark" href="/">
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+        <circle cx="13" cy="13" r="2.4" fill="#e3a13f"/>
+        <ellipse cx="13" cy="13" rx="11" ry="4.6" stroke="#0e1a2b" stroke-width="1.3"/>
+        <ellipse cx="13" cy="13" rx="11" ry="4.6" stroke="#0e1a2b" stroke-width="1.3" transform="rotate(60 13 13)"/>
+        <ellipse cx="13" cy="13" rx="11" ry="4.6" stroke="#0e1a2b" stroke-width="1.3" transform="rotate(120 13 13)"/>
+      </svg>
+      FSRIC
+    </a>
+    <div class="nav-links">
+      <a href="/#tracks">Tracks</a>
+      <a href="/#timeline">Timeline</a>
+      <a href="/#judging">Judging</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+    <a class="nav-cta" href="/register.html">Register a team</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-menu">Menu</button>
+  </div>
+  <div class="nav-mobile" id="mobile-menu">
+    <a href="/#tracks">Tracks</a>
+    <a href="/#timeline">Timeline</a>
+    <a href="/#judging">Judging</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/register.html">Register a team</a>
+  </div>
+</nav>
+
+<header class="register-hero">
+  <div class="wrap">
+    <h1>Register your team</h1>
+    <p>Registration only needs a track and a working title — your prototype gets built after the proposal round. You can still change most of this later from the confirmation email.</p>
+  </div>
+</header>
+
+<section class="form-section">
+  <div class="wrap">
+    <div class="form-shell" id="form-shell">
+      <form id="register-form" novalidate>
+        <div class="form-grid">
+          <div class="field">
+            <label for="team_name">Team name</label>
+            <input type="text" id="team_name" name="team_name" required>
+            <span class="err-msg">This field is required.</span>
+          </div>
+          <div class="field">
+            <label for="school">School</label>
+            <input type="text" id="school" name="school" required>
+            <span class="err-msg">This field is required.</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="track">Track</label>
+          <select id="track" name="track" required>
+            <option value="">Select a track</option>
+            <option>Sustainable Energy &amp; Environment</option>
+            <option>Biomedical &amp; Health Technology</option>
+            <option>Applied Physics &amp; Engineering</option>
+            <option>Computational &amp; Data Science</option>
+          </select>
+          <span class="err-msg">Select a track.</span>
+        </div>
+
+        <div class="field">
+          <label for="project_title">Working project title</label>
+          <input type="text" id="project_title" name="project_title" required>
+          <span class="hint">A short title is fine — this can change after the proposal round.</span>
+          <span class="err-msg">This field is required.</span>
+        </div>
+
+        <div class="field">
+          <label for="problem">Problem your team is investigating</label>
+          <textarea id="problem" name="problem" required></textarea>
+          <span class="hint">2–3 sentences. This isn't the full proposal, just enough for judges to route your team correctly.</span>
+          <span class="err-msg">This field is required.</span>
+        </div>
+
+        <div id="members-wrap">
+          <fieldset class="member">
+            <legend>Student 1</legend>
+            <button type="button" class="member-remove">Remove</button>
+            <div class="form-grid">
+              <div class="field">
+                <label>Full name</label>
+                <input type="text" name="member_name_1" required>
+              </div>
+              <div class="field">
+                <label>Grade</label>
+                <select name="member_grade_1" required>
+                  <option value="">Select grade</option>
+                  <option>9</option><option>10</option><option>11</option><option>12</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <button type="button" class="add-member" id="add-member">+ Add another student</button>
+
+        <div class="form-grid">
+          <div class="field">
+            <label for="advisor_name">Advisor name</label>
+            <input type="text" id="advisor_name" name="advisor_name" required>
+            <span class="err-msg">This field is required.</span>
+          </div>
+          <div class="field">
+            <label for="advisor_email">Advisor email</label>
+            <input type="email" id="advisor_email" name="advisor_email" required>
+            <span class="err-msg">Enter a valid email address.</span>
+          </div>
+        </div>
+
+        <div class="form-submit-row">
+          <button type="submit" class="btn-primary" style="background:#0e1a2b; color:#eef1ea;">Submit registration</button>
+          <span class="form-note">Registration closes November 14 at 11:59pm.</span>
+        </div>
+      </form>
+
+      <div class="confirm-panel" id="confirm-panel">
+        <h2>You're registered.</h2>
+        <p><strong id="confirm-team"></strong> is entered in the <strong id="confirm-track"></strong> track.</p>
+        <div class="confirm-id" id="confirm-id"></div>
+        <p>Keep this confirmation number — you'll need it to check proposal status in December. A copy of these details would normally be emailed to your advisor; this demo doesn't send real email.</p>
+        <p><a href="/" class="btn-ghost" style="border-color:#c3ccb8; color:#0e1a2b;">Back to the FSRIC home page</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-bottom">
+      <div>&copy; 2026 Fall Science Regional Innovation Challenge</div>
+      <div><a href="/">fsric.org</a></div>
+    </div>
+  </div>
+</footer>
+<p class="disclaimer">This site is a concept design for a fictional student science competition, built as a sample. Submitting this form does not send any data anywhere — it only demonstrates the registration flow in your browser.</p>
+
+<script src="/js/main.js"></script>
+</body>
+</html>
